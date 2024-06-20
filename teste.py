@@ -10,7 +10,7 @@ df = pd.read_excel(file_path, sheet_name='2019')
 # Garantir que a coluna DATA_INICIO_EXERC está no formato de data
 df['DATA_INICIO_EXERC'] = pd.to_datetime(df['DATA_INICIO_EXERC'], format='%d/%m/%Y', errors='coerce')
 
-# Calcular o tempo de contribuição em anos
+# Calcular o tempo de contribuiçãos em anos
 data_atual = datetime.now()
 df['TEMPO_CONTRIBUICAO'] = (data_atual - df['DATA_INICIO_EXERC']).dt.days / 365.25
 
